@@ -1,0 +1,23 @@
+// Color: 
+$blue:                          #5250E9;
+$secondary:                     #00f58b;
+$dark:                          #232323;
+
+// Font:
+$font-family-base:              'Rubik', sans-serif !default;
+
+// Labels
+$form-label-font-weight:         500;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+// React-quill
+@import 'react-quill/dist/quill.snow.css';
+.quill .ql-toolbar {
+  border-width: 0;
+  border-bottom: $input-border-width solid $input-border-color;
+  background-color: $card-cap-bg;
+}
+.quill .ql-container {
+  border-width: 0;
+}

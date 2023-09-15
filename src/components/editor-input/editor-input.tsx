@@ -3,20 +3,21 @@ import { FormGroup, Label } from 'reactstrap';
 
 type EditorInputProps = {
   body: string;
-  setBody: (body: string) => void;
+  handleReactQuillChange: (body: string) => void;
 }
 
-function EditorInput({body, setBody}: EditorInputProps) {
+function EditorInput({body, handleReactQuillChange}: EditorInputProps) {
   return (
     <FormGroup className="mb-sm-4">
-      <Label for="mainImageInput">
+      <Label for="reactQuill">
         Тело письма
       </Label>
       <ReactQuill
         className="border rounded-3"
         theme="snow"
         value={body}
-        onChange={setBody}
+        id="reactQuill"
+        onChange={handleReactQuillChange}
       />
     </FormGroup>
   );

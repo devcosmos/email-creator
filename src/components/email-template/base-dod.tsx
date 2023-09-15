@@ -1,16 +1,14 @@
 import { MAI_LOGO } from '../../images-base64/logo-mai';
+import { LetterData } from '../../types/data';
 import BaseLayout from './base-layout';
 
 type BaseDodProps = {
-  title: string;
-  image: string | null;
-  body: string;
-  addButton: boolean;
-  buttonTitle: string;
-  buttonUrl: string;
+  letterData: LetterData;
 };
 
-function BaseDod({ title, image, body, addButton, buttonTitle, buttonUrl }: BaseDodProps): JSX.Element {
+function BaseDod({ letterData }: BaseDodProps): JSX.Element {
+  const { title, body, mainButtonTitle, mainButtonUrl, addButton, image } = letterData;
+
   return (
     <BaseLayout>
       <>
@@ -135,7 +133,7 @@ function BaseDod({ title, image, body, addButton, buttonTitle, buttonUrl }: Base
                       чтобы не&nbsp;пропустить новости
                       о&nbsp;поступлении и&nbsp;мероприятиях.
                     </span>
-                    {addButton && buttonUrl && buttonTitle && (
+                    {addButton && mainButtonUrl && mainButtonTitle && (
                       <table
                         align="center"
                         cellSpacing="0"
@@ -165,7 +163,7 @@ function BaseDod({ title, image, body, addButton, buttonTitle, buttonUrl }: Base
                               }}
                             >
                               <a
-                                href={buttonUrl}
+                                href={mainButtonUrl}
                                 style={{
                                   WebkitTextSizeAdjust: 'none',
                                   textDecoration: 'none',
@@ -181,7 +179,7 @@ function BaseDod({ title, image, body, addButton, buttonTitle, buttonUrl }: Base
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                {buttonTitle.toUpperCase()}
+                                {mainButtonTitle.toUpperCase()}
                               </a>
                             </td>
                           </tr>

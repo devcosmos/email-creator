@@ -1,4 +1,8 @@
-export type Data = {
+export type LetterData = {
   title: string;
-  description: string;
+  image: string | null;
+  body: string;
+  addButton: boolean;
+  mainButtonTitle: string;
+  mainButtonUrl: string;
 }

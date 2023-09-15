@@ -1,19 +1,19 @@
-import { ChangeEvent } from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
+import { ChangeEvent } from 'react';
 
 type TitleInputProps = {
   title: string;
-  setTitle: (title: string) => void;
+  handleInputChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function TitleInput({title, setTitle}: TitleInputProps): JSX.Element {
+function TitleInput({title, handleInputChange}: TitleInputProps): JSX.Element {
   return (
     <FormGroup className="mb-sm-4">
       <Label for="titleInput">
         Основной заголовок
       </Label>
       <Input
-        onChange={(evt: ChangeEvent<HTMLInputElement>) => setTitle(evt.target.value)}
+        onChange={handleInputChange}
         value={title}
         type="text"
         name="title"

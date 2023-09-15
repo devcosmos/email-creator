@@ -1,10 +1,12 @@
 import { ChangeEvent, useRef, useState } from 'react';
-import { Card, CardBody, CardHeader, Col, Container, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap';
 import UploadImageInput from '../upload-image-input/upload-image-input';
 import EditorInput from '../editor-input/editor-input';
 import BaseDod from '../email-template/base-dod';
 import TitleInput from '../title-input/title-input';
 import SaveButtons from '../save-buttons/save-buttons';
+import { LetterData } from '../../types/data';
+import MainButton from '../main-button/main-button';
 
 /*
 Идеи/Баги:
@@ -16,14 +18,22 @@ import SaveButtons from '../save-buttons/save-buttons';
 */
 
 function App(): JSX.Element {
-  const [letterTitle, setLetterTitle] = useState<string>('Привет!');
-  const [letterBody, setLetterBody] = useState<string>('Здесь могла бы быть ваша реклама...');
-  const [letterImage, setLetterImage] = useState<null | string>(null);
   const letter = useRef<null | HTMLDivElement>(null);
 
-  const [addButton, setAddButton] = useState(false);
-  const [letterMainButtonTitle, setMainButtonTitle] = useState<string>('Подробнее');
-  const [letterMainButtonUrl, setMainButtonUrl] = useState<string>('https://mai.ru/');
+  const [letterData, setLetterData] = useState<LetterData>({
+    title: 'Привет!',
+    image: null,
+    body: 'Здесь могла бы быть ваша реклама...',
+    addButton: false,
+    mainButtonTitle: 'Подробнее',
+    mainButtonUrl: 'https://mai.ru/',
+  });
+
+  const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = evt.target;
+
+    setLetterData({...letterData, [name]: value});
+  };
 
   return (
     <Container
@@ -37,60 +47,29 @@ function App(): JSX.Element {
               Настройки шаблона
             </CardHeader>
             <CardBody>
-              <UploadImageInput setImage={setLetterImage} />
-              <TitleInput title={letterTitle} setTitle={setLetterTitle} />
-              <EditorInput body={letterBody} setBody={setLetterBody} />
-              <FormGroup switch>
-                <Input
-                  type="switch"
-                  checked={addButton}
-                  onChange={() => {
-                    setAddButton(!addButton);
-                  }}
-                />
-                <Label check>Добавить кнопку?</Label>
-              </FormGroup>
-              {addButton && (
-                <Row className="mt-4">
-                  <Col md={6}>
-                    <FormGroup>
-                      <Label for="mainButtonTitle">
-                        Текст кнопки
-                      </Label>
-                      <Input
-                        id="mainButtonTitle"
-                        name="mainButtonTitle"
-                        type="text"
-                        onChange={(evt: ChangeEvent<HTMLInputElement>) => setMainButtonTitle(evt.target.value)}
-                        value={letterMainButtonTitle}
-                        required
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={6}>
-                    <FormGroup>
-                      <Label for="mainButtonUrl">
-                        Ссылка
-                      </Label>
-                      <Input
-                        id="mainButtonUrl"
-                        name="mainButtonUrl"
-                        type="url"
-                        onChange={(evt: ChangeEvent<HTMLInputElement>) => setMainButtonUrl(evt.target.value)}
-                        value={letterMainButtonUrl}
-                        required
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-              )}
+              <UploadImageInput setImage={(image) => setLetterData({...letterData, 'image': image})} />
+              <TitleInput
+                title={letterData.title}
+                handleInputChange={handleInputChange}
+              />
+              <EditorInput
+                body={letterData.body}
+                handleReactQuillChange={(body) => setLetterData({...letterData, 'body': body})}
+              />
+              <MainButton
+                title={letterData.mainButtonTitle}
+                url={letterData.mainButtonUrl}
+                addButton={letterData.addButton}
+                handleCheckboxChange={(addButton) => setLetterData({...letterData, 'addButton': addButton})}
+                handleInputChange={handleInputChange}
+              />
               {letter.current && <SaveButtons letter={letter.current} />}
             </CardBody>
           </Card>
         </Col>
         <Col xs="6">
           <div ref={letter}>
-            <BaseDod title={letterTitle} image={letterImage} body={letterBody} addButton={addButton} buttonTitle={letterMainButtonTitle} buttonUrl={letterMainButtonUrl}/>
+            <BaseDod letterData={letterData} />
           </div>
         </Col>
       </Row>

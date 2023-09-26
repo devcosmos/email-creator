@@ -20,6 +20,7 @@ function SaveButtons({letter}: SaveButtonsProps): JSX.Element {
         color="primary"
         outline
         size="lg"
+        className="me-3"
         onClick={() => downloadFile(letter)}
       >
         Сохранить файл

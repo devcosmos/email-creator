@@ -1,5 +1,13 @@
-import { ChangeEvent, useRef, useState } from 'react';
-import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap';
+import { ChangeEvent, useRef, useState} from 'react';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Container,
+  Row,
+  Button,
+} from 'reactstrap';
 import UploadImageInput from '../upload-image-input/upload-image-input';
 import EditorInput from '../editor-input/editor-input';
 import BaseDod from '../email-template/base-dod';
@@ -7,6 +15,8 @@ import TitleInput from '../title-input/title-input';
 import SaveButtons from '../save-buttons/save-buttons';
 import { LetterData } from '../../types/data';
 import MainButton from '../main-button/main-button';
+import {letterValues} from '../../helpers/objects';
+import TemplateModal from '../template-modal/template-modal';
 
 /*
 Идеи/Баги:
@@ -18,21 +28,24 @@ import MainButton from '../main-button/main-button';
 */
 
 function App(): JSX.Element {
+
   const letter = useRef<null | HTMLDivElement>(null);
 
-  const [letterData, setLetterData] = useState<LetterData>({
-    title: 'Привет!',
-    image: null,
-    body: 'Здесь могла бы быть ваша реклама...',
-    addButton: false,
-    mainButtonTitle: 'Подробнее',
-    mainButtonUrl: 'https://mai.ru/',
-  });
+  const [letterData, setLetterData] = useState<LetterData>(letterValues);
 
-  const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
+  const [modal, setModal] = useState(false);
+
+  const handleInputChange = (evt: ChangeEvent<null | HTMLInputElement>) => {
     const {name, value} = evt.target;
-
     setLetterData({...letterData, [name]: value});
+  };
+
+  const modalHandler = ():void => {
+    setModal(!modal);
+  };
+
+  const resetData = ():void => {
+    setLetterData(letterValues);
   };
 
   return (
@@ -40,11 +53,21 @@ function App(): JSX.Element {
       className="bg-white border vh-100"
       fluid
     >
+      <TemplateModal
+        modal={modal}
+        modalHandler={modalHandler}
+        letterData={letterData}
+        setLetterData={setLetterData}
+        resetData={resetData}
+      />
       <Row className="py-5 my-5">
         <Col xs="6">
           <Card>
             <CardHeader className="fw-bold h5 py-3">
               Настройки шаблона
+              <Button color="primary" className="ms-3" onClick={() => modalHandler()}>
+                Изменить
+              </Button>
             </CardHeader>
             <CardBody>
               <UploadImageInput setImage={(image) => setLetterData({...letterData, 'image': image})} />
@@ -76,5 +99,4 @@ function App(): JSX.Element {
     </Container>
   );
 }
-
 export default App;

@@ -7,15 +7,8 @@ import {
   Container,
   Row,
   Button,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  Form,
-  FormGroup,
-  Label,
 } from 'reactstrap';
 import UploadImageInput from '../upload-image-input/upload-image-input';
-import UploadJsonInput from '../upload-json-input/upload-json-input';
 import EditorInput from '../editor-input/editor-input';
 import BaseDod from '../email-template/base-dod';
 import TitleInput from '../title-input/title-input';
@@ -23,6 +16,7 @@ import SaveButtons from '../save-buttons/save-buttons';
 import { LetterData } from '../../types/data';
 import MainButton from '../main-button/main-button';
 import {letterValues} from '../../helpers/objects';
+import TemplateModal from '../template-modal/template-modal';
 
 /*
 Идеи/Баги:
@@ -43,7 +37,6 @@ function App(): JSX.Element {
 
   const handleInputChange = (evt: ChangeEvent<null | HTMLInputElement>) => {
     const {name, value} = evt.target;
-
     setLetterData({...letterData, [name]: value});
   };
 
@@ -51,31 +44,7 @@ function App(): JSX.Element {
     setModal(!modal);
   };
 
-  const downloadFile = (data: string, fileName: string, fileType: string):void => {
-    const blob = new Blob([JSON.stringify(letterData)], { type: fileType });
-    const a = document.createElement('a');
-    a.download = fileName;
-    a.href = window.URL.createObjectURL(blob);
-    const clickEvt = new MouseEvent('click', {
-      view: window,
-      bubbles: true,
-      cancelable: true,
-    });
-    a.dispatchEvent(clickEvt);
-    a.remove();
-  };
-
-  const exportJSON = ():void => {
-    const data: string = JSON.stringify(letterData);
-    downloadFile(
-      data,
-      'letter.json',
-      'text/json',
-    );
-  };
-
   const resetData = ():void => {
-    console.log('Сбросилось');
     setLetterData(letterValues);
   };
 
@@ -84,22 +53,13 @@ function App(): JSX.Element {
       className="bg-white border vh-100"
       fluid
     >
-      <Modal isOpen={modal}>
-        <ModalHeader toggle={modalHandler}>Изменить настройки шаблона</ModalHeader>
-        <ModalBody>
-          <Form>
-            <FormGroup className="mb-4">
-              <Label className="w-100">Сброс настроек</Label>
-              <Button onClick={() => resetData()} color="primary" outline>Сбросить</Button>
-            </FormGroup>
-            <FormGroup className="mb-4">
-              <Label className="w-100">Сохранить настройки</Label>
-              <Button color="primary" outline onClick={() => exportJSON()}>Скачать</Button>
-            </FormGroup>
-            <UploadJsonInput onFileRead={(jsonData) => setLetterData(jsonData ? jsonData : letterData)} letterData={letterData} />
-          </Form>
-        </ModalBody>
-      </Modal>
+      <TemplateModal
+        modal={modal}
+        modalHandler={modalHandler}
+        letterData={letterData}
+        setLetterData={setLetterData}
+        resetData={resetData}
+      />
       <Row className="py-5 my-5">
         <Col xs="6">
           <Card>

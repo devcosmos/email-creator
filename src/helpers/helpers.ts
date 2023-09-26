@@ -21,3 +21,4 @@ export const downloadFile = (html: HTMLDivElement): void => {
   element.click();
   element.remove();
 };
+

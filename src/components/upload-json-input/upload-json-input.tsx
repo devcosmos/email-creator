@@ -5,9 +5,10 @@ import { LetterData } from '../../types/data';
 interface UploadJsonInputProps {
   onFileRead: (data: LetterData | null) => void;
   letterData: LetterData;
+  setLetterData: (data: LetterData | null) => void;
 }
 
-const UploadJsonInput: React.FC<UploadJsonInputProps> = ({ onFileRead, letterData }) => {
+const UploadJsonInput: React.FC<UploadJsonInputProps> = ({ onFileRead, letterData, setLetterData}) => {
   const [fileData, setFileData] = useState<string | null>(JSON.stringify(letterData));
   const [uploadedData, setUploadedData] = useState<LetterData | null>(null);
 
@@ -25,10 +26,12 @@ const UploadJsonInput: React.FC<UploadJsonInputProps> = ({ onFileRead, letterDat
   };
 
   const applyChanges = () => {
+    console.log('applyChanges');
     try {
       if (fileData) {
         const jsonData = JSON.parse(fileData) as LetterData;
         setUploadedData(jsonData);
+        setLetterData(jsonData);
         onFileRead(jsonData);
       }
     } catch (error) {

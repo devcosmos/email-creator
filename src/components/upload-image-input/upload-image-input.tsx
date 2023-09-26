@@ -4,7 +4,7 @@ type UploadImageInputProps = {
   setImage: (image: string | null) => void;
 }
 
-const UploadImageInput = ({setImage}: UploadImageInputProps) => {
+function UploadImageInput({ setImage }: UploadImageInputProps): JSX.Element {
   const encodeImageFileAsURL = (file: File) => {
     const reader = new FileReader();
     reader.onloadend = function() {
@@ -39,6 +39,6 @@ const UploadImageInput = ({setImage}: UploadImageInputProps) => {
       </FormText>
     </FormGroup>
   );
-};
+}
 
 export default UploadImageInput;

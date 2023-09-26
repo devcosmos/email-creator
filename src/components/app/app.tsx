@@ -8,15 +8,6 @@ import SaveButtons from '../save-buttons/save-buttons';
 import { LetterData } from '../../types/data';
 import MainButton from '../main-button/main-button';
 
-/*
-Идеи/Баги:
-1. Валидация загрузки изображения
-2. Сохранить последний шаблон в local storage
-3. Вариации логотипов и цветов
-4. Вариации блоков после основного тела
-5. Импорт/Экспорт настроек
-*/
-
 function App(): JSX.Element {
   const letter = useRef<null | HTMLDivElement>(null);
 

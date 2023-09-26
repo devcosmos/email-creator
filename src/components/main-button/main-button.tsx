@@ -8,6 +8,7 @@ type MainButtonProps = {
   handleCheckboxChange: (addButton: boolean) => void;
   handleInputChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
+
 function MainButton({ title, url, addButton, handleCheckboxChange, handleInputChange }: MainButtonProps): JSX.Element {
   return (
     <>

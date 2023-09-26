@@ -5,7 +5,7 @@ type SaveButtonsProps = {
   letter: HTMLDivElement;
 }
 
-function SaveButtons({letter}: SaveButtonsProps): JSX.Element {
+function SaveButtons({ letter }: SaveButtonsProps): JSX.Element {
   return (
     <div className="mt-5">
       <Button

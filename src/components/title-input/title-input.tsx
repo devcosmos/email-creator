@@ -6,7 +6,7 @@ type TitleInputProps = {
   handleInputChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function TitleInput({title, handleInputChange}: TitleInputProps): JSX.Element {
+function TitleInput({ title, handleInputChange }: TitleInputProps): JSX.Element {
   return (
     <FormGroup className="mb-sm-4">
       <Label for="titleInput">

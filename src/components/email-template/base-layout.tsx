@@ -2,7 +2,7 @@ type BaseLayoutProps = {
   children: JSX.Element;
 }
 
-function BaseLayout({children}: BaseLayoutProps): JSX.Element {
+function BaseLayout({ children }: BaseLayoutProps): JSX.Element {
   return (
     <table
       align="center"

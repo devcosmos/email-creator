@@ -6,7 +6,7 @@ type EditorInputProps = {
   handleReactQuillChange: (body: string) => void;
 }
 
-function EditorInput({body, handleReactQuillChange}: EditorInputProps) {
+function EditorInput({ body, handleReactQuillChange }: EditorInputProps): JSX.Element {
   return (
     <FormGroup className="mb-sm-4">
       <Label for="reactQuill">

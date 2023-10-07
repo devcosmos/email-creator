@@ -33,7 +33,7 @@ function App(): JSX.Element {
     >
       <Row className="py-5 my-5">
         <Col xs="6">
-          <Card>
+          <Card className="sticky-top">
             <CardHeader className="fw-bold h5 py-3">
               Настройки шаблона
             </CardHeader>

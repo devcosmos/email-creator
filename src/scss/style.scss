@@ -10,6 +10,9 @@ $font-family-base:              'Rubik', sans-serif !default;
 $form-label-font-weight:         500;
 
 @import '~bootstrap/scss/bootstrap.scss';
+.sticky-top {
+  top: 4rem;
+}
 
 // React-quill
 @import 'react-quill/dist/quill.snow.css';

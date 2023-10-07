@@ -28,7 +28,7 @@ function App(): JSX.Element {
 
   return (
     <Container
-      className="bg-white border vh-100"
+      className="h-100"
       fluid
     >
       <Row className="py-5 my-5">
@@ -62,7 +62,7 @@ function App(): JSX.Element {
           </Card>
         </Col>
         <Col xs="6">
-          <div ref={letter}>
+          <div ref={letter} className="rounded overflow-hidden">
             <BaseDod letterData={letterData} />
           </div>
         </Col>

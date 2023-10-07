@@ -1,4 +1,3 @@
-import { MAI_LOGO } from '../../images-base64/logo-mai';
 import { LetterData } from '../../types/data';
 import BaseLayout from './base-layout';
 
@@ -21,7 +20,7 @@ function BaseDod({ letterData }: BaseDodProps): JSX.Element {
             }}
           >
             <img
-              src={MAI_LOGO}
+              src={'/images/logoname-x2.png'}
               width="247"
               alt="Московский авиационный институт"
               style={{

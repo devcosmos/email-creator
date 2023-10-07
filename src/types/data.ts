@@ -1,6 +1,6 @@
 export type LetterData = {
   title: string;
-  image: string | null;
+  image: string;
   body: string;
   addButton: boolean;
   mainButtonTitle: string;

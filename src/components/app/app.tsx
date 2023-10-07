@@ -1,8 +1,8 @@
 import { ChangeEvent, useRef, useState } from 'react';
 import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap';
-import UploadImageInput from '../upload-image-input/upload-image-input';
 import EditorInput from '../editor-input/editor-input';
 import BaseDod from '../email-template/base-dod';
+import ImageInput from '../image-input/image-input';
 import TitleInput from '../title-input/title-input';
 import SaveButtons from '../save-buttons/save-buttons';
 import { LetterData } from '../../types/data';
@@ -13,7 +13,7 @@ function App(): JSX.Element {
 
   const [letterData, setLetterData] = useState<LetterData>({
     title: 'Привет!',
-    image: null,
+    image: '/images/example.webp',
     body: 'Здесь могла бы быть ваша реклама...',
     addButton: false,
     mainButtonTitle: 'Подробнее',
@@ -38,7 +38,10 @@ function App(): JSX.Element {
               Настройки шаблона
             </CardHeader>
             <CardBody>
-              <UploadImageInput setImage={(image) => setLetterData({...letterData, 'image': image})} />
+              <ImageInput
+                image={letterData.image}
+                handleInputChange={handleInputChange}
+              />
               <TitleInput
                 title={letterData.title}
                 handleInputChange={handleInputChange}

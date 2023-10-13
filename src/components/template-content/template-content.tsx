@@ -5,6 +5,7 @@ import TemplateHero from '../template-hero/template-hero';
 type TemplateContentProps = {
   letterData: LetterData;
 }
+
 function TemplateContent({ letterData }: TemplateContentProps): JSX.Element {
   const { image, title, body, mainButtonTitle, mainButtonUrl, addButton, signatureType, accentStyle } = letterData;
 

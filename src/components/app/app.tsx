@@ -7,14 +7,19 @@ import TitleInput from '../title-input/title-input';
 import SaveButtons from '../save-buttons/save-buttons';
 import { LetterData } from '../../types/data';
 import MainButton from '../main-button/main-button';
+import SignatureTypeSelect from '../signature-type-select/signature-type-select';
+import { SignatureType } from '../../const';
+import Template from '../template/template';
 
 function App(): JSX.Element {
   const letter = useRef<null | HTMLDivElement>(null);
 
   const [letterData, setLetterData] = useState<LetterData>({
-    title: 'Привет!',
-    image: '/images/example.webp',
-    body: 'Здесь могла бы быть ваша реклама...',
+    title: 'Привет ✨',
+    image: 'images/example.webp',
+    body: 'Как создавать шедевры с помощью Midjorney, вы узнаете в другом месте. А мы расскажем, с чего вообще началось генеративное искусство и кто научил нейросети «рисовать».',
+    signatureType: SignatureType.Mai,
+    accentStyle: false,
     addButton: false,
     mainButtonTitle: 'Подробнее',
     mainButtonUrl: 'https://mai.ru/',
@@ -63,7 +68,7 @@ function App(): JSX.Element {
         </Col>
         <Col xs="6">
           <div ref={letter} className="rounded overflow-hidden">
-            <BaseDod letterData={letterData} />
+            <Template letterData={letterData} />
           </div>
         </Col>
       </Row>

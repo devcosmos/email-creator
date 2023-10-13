@@ -11,10 +11,11 @@ function AccentStyleCheckbox({ accentStyle, handleCheckboxChange }: AccentStyleC
       <Input
         type="switch"
         checked={accentStyle}
-        name="addButton"
+        name="accentStyle"
+        id="accentStyleCheckbox"
         onChange={() => handleCheckboxChange(!accentStyle)}
       />
-      <Label check>Альтернативная цветовая схема</Label>
+      <Label check for="accentStyleCheckbox">Альтернативная цветовая схема</Label>
     </FormGroup>
   );
 }

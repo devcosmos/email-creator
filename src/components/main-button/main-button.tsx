@@ -17,9 +17,10 @@ function MainButton({ title, url, addButton, handleCheckboxChange, handleInputCh
           type="switch"
           checked={addButton}
           name="addButton"
+          id="addButtonCheckbox"
           onChange={() => handleCheckboxChange(!addButton)}
         />
-        <Label check>Добавить кнопку?</Label>
+        <Label check for="addButtonCheckbox">Добавить кнопку?</Label>
       </FormGroup>
 
       {addButton && (

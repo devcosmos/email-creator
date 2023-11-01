@@ -5,22 +5,20 @@ type TemplateButtonProps = {
   title: string;
   type: SignatureType;
   accentStyle: boolean;
+  socialUrlVK?: string;
+  socialUrlTelegram?: string;
 }
 
-function TemplateButton({ url, title, type, accentStyle }: TemplateButtonProps): JSX.Element {
+function TemplateButton({ url, title, type, accentStyle, socialUrlVK, socialUrlTelegram }: TemplateButtonProps): JSX.Element {
   return (
-    <tr style={{ margin: 0, padding: 0 }}>
+    <tr style={{ margin: 0, padding: 0, display: 'block', marginLeft: '5%', marginBottom: '30px', }}>
       <td style={{ margin: 0, padding: 0 }}>
         <table
           border={0}
           cellSpacing={0}
           cellPadding={0}
           role="presentation"
-          style={{
-            marginLeft: '5%',
-            marginBottom: '30px',
-            width: '50%',
-          }}
+          style={{ width: '200px' }}
         >
           <tbody>
             <tr style={{ margin: 0, padding: 0 }}>
@@ -60,6 +58,22 @@ function TemplateButton({ url, title, type, accentStyle }: TemplateButtonProps):
           </tbody>
         </table>
       </td>
+
+      {socialUrlVK && (
+        <td style={{ margin: 0, padding: 0 }}>
+          <a href={socialUrlVK} target="_blank" rel="noreferrer" style={{ marginLeft: '10px' }}>
+            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'vk' : 'vk-black'}.svg`} alt="ВКонтакте" style={{ width: '33px', height: '33px' }} />
+          </a>
+        </td>
+      )}
+
+      {socialUrlTelegram && (
+        <td style={{ margin: 0, padding: 0 }}>
+          <a href={socialUrlTelegram} target="_blank" rel="noreferrer" style={{ marginLeft: '10px' }}>
+            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'telegram' : 'telegram-black'}.svg`} alt="Телеграм" style={{ width: '33px', height: '33px' }} />
+          </a>
+        </td>
+      )}
     </tr>
   );
 }

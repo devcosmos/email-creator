@@ -7,6 +7,7 @@ export type LetterData = {
   signatureType: SignatureType;
   accentStyle: boolean;
   addButton: boolean;
+  addSocial: boolean;
   mainButtonTitle: string;
   mainButtonUrl: string;
 }

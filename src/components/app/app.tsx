@@ -15,6 +15,7 @@ function App(): JSX.Element {
     signatureType: SignatureType.Mai,
     accentStyle: false,
     addButton: false,
+    addSocial: false,
     mainButtonTitle: 'Подробнее',
     mainButtonUrl: 'https://mai.ru/',
   });

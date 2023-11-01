@@ -8,6 +8,7 @@ import SignatureTypeSelect from '../signature-type-select/signature-type-select'
 import AccentStyleCheckbox from '../accent-style-checkbox/accent-style-checkbox';
 import { LetterData } from '../../types/data';
 import { ChangeEvent, MutableRefObject } from 'react';
+import SocialCheckbox from '../social-checkbox/social-checkbox';
 
 type SettingsProps = {
   letter: MutableRefObject<HTMLDivElement | null>;
@@ -60,6 +61,10 @@ function Settings({letter, letterData, setLetterData}: SettingsProps) {
           addButton={letterData.addButton}
           handleCheckboxChange={(addButton) => setLetterData({...letterData, 'addButton': addButton})}
           handleInputChange={handleInputChange}
+        />
+        <SocialCheckbox
+          addSocial={letterData.addSocial}
+          handleCheckboxChange={(addSocial) => setLetterData({...letterData, 'addSocial': addSocial})}
         />
         {letter.current && <SaveButtons letter={letter.current} />}
       </CardBody>

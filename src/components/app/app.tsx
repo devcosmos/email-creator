@@ -1,15 +1,9 @@
-import { ChangeEvent, useRef, useState } from 'react';
-import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap';
-import EditorInput from '../editor-input/editor-input';
-import ImageInput from '../image-input/image-input';
-import TitleInput from '../title-input/title-input';
-import SaveButtons from '../save-buttons/save-buttons';
+import { useRef, useState } from 'react';
+import { Col, Container, Row } from 'reactstrap';
 import { LetterData } from '../../types/data';
-import MainButton from '../main-button/main-button';
-import SignatureTypeSelect from '../signature-type-select/signature-type-select';
 import { SignatureType } from '../../const';
 import Template from '../template/template';
-import AccentStyleCheckbox from '../accent-style-checkbox/accent-style-checkbox';
+import Settings from '../settings/settings';
 
 function App(): JSX.Element {
   const letter = useRef<null | HTMLDivElement>(null);
@@ -25,60 +19,11 @@ function App(): JSX.Element {
     mainButtonUrl: 'https://mai.ru/',
   });
 
-  const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = evt.target;
-
-    setLetterData({...letterData, [name]: value});
-  };
-
   return (
-    <Container
-      className="h-100"
-      fluid
-    >
+    <Container className="h-100" fluid>
       <Row className="py-5 my-5">
         <Col xs="6">
-          <Card className="sticky-top">
-            <CardHeader className="fw-bold h5 py-3">
-              Настройки шаблона
-            </CardHeader>
-            <CardBody>
-              <ImageInput
-                image={letterData.image}
-                handleInputChange={handleInputChange}
-              />
-              <TitleInput
-                title={letterData.title}
-                handleInputChange={handleInputChange}
-              />
-              <Row>
-                <Col lg="6">
-                  <SignatureTypeSelect
-                    signatureType={letterData.signatureType}
-                    handleInputChange={handleInputChange}
-                  />
-                </Col>
-                <Col lg="6" className="d-flex align-items-center">
-                  <AccentStyleCheckbox
-                    accentStyle={letterData.accentStyle}
-                    handleCheckboxChange={(accentStyle) => setLetterData({...letterData, 'accentStyle': accentStyle})}
-                  />
-                </Col>
-              </Row>
-              <EditorInput
-                body={letterData.body}
-                handleReactQuillChange={(body) => setLetterData({...letterData, 'body': body})}
-              />
-              <MainButton
-                title={letterData.mainButtonTitle}
-                url={letterData.mainButtonUrl}
-                addButton={letterData.addButton}
-                handleCheckboxChange={(addButton) => setLetterData({...letterData, 'addButton': addButton})}
-                handleInputChange={handleInputChange}
-              />
-              {letter.current && <SaveButtons letter={letter.current} />}
-            </CardBody>
-          </Card>
+          <Settings letter={letter} letterData={letterData} setLetterData={setLetterData} />
         </Col>
         <Col xs="6">
           <div ref={letter} className="rounded overflow-hidden">

@@ -21,4 +21,7 @@ export type Scheme = {
   buttonColor: string;
   buttonColorAccent: string;
   signatureWidth: number;
+  socialText: string;
+  socialUrlVK: string;
+  socialUrlTelegram: string;
 }

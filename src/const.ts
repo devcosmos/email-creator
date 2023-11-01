@@ -18,6 +18,9 @@ export const SignatureScheme:
     buttonColor: '#2082FF',
     buttonColorAccent: '#000000',
     signatureWidth: 535,
+    socialText: 'Подпишись, чтобы быть в курсе последних новостей МАИ!',
+    socialUrlVK: 'https://vk.com/maiuniversity',
+    socialUrlTelegram: 'https://t.me/MAIuniversity',
   },
   [SignatureType.Priem]: {
     title: 'Московский авиационный институт',
@@ -29,6 +32,9 @@ export const SignatureScheme:
     buttonColor: '#FF7020',
     buttonColorAccent: '#000000',
     signatureWidth: 493,
+    socialText: 'Подпишись, чтобы не пропустить новости о поступлении, обучение и мероприятиях для абитуриентов!',
+    socialUrlVK: 'https://vk.com/postupi_v_mai',
+    socialUrlTelegram: 'https://t.me/postupi_v_mai',
   },
   [SignatureType.Pum]: {
     title: 'Предуниверсарий МАИ',
@@ -40,5 +46,8 @@ export const SignatureScheme:
     buttonColor: '#505CFD',
     buttonColorAccent: '#000000',
     signatureWidth: 429,
+    socialText: 'Подпишись, чтобы не пропустить новости об обучении и мероприятиях!',
+    socialUrlVK: 'https://vk.com/preduniversariymai',
+    socialUrlTelegram: 'https://t.me/preduniversariymai',
   },
 };

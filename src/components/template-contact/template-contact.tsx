@@ -19,7 +19,7 @@ function TemplateContact({ accentStyle, type }: TemplateContactProps): JSX.Eleme
           style={{
             width: '100%',
             maxWidth: '600px',
-            marginTop: '5px',
+            marginTop: '15px',
             marginBottom: '30px',
           }}
         >

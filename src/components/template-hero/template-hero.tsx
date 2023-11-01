@@ -18,7 +18,6 @@ function TemplateHero({ title, image }: TemplateHeroProps): JSX.Element {
             marginTop: '3%',
             marginLeft: '3%',
             marginRight: '3%',
-            // marginBottom: '2.5%',
           }}
         >
           <tbody>
@@ -27,7 +26,7 @@ function TemplateHero({ title, image }: TemplateHeroProps): JSX.Element {
                 <img
                   src={image}
                   alt={title}
-                  style={{ borderRadius: '30px', width: '100%' }}
+                  style={{ borderRadius: '22.5px', width: '100%' }}
                 />
               </td>
             </tr>

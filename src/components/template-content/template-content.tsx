@@ -21,9 +21,9 @@ function TemplateContent({ letterData }: TemplateContentProps): JSX.Element {
           style={{
             width: '100%',
             maxWidth:' 600px',
-            borderRadius: '40px',
+            borderRadius: '30px',
             backgroundColor: '#FFFFFF',
-            marginBottom: '2.25%',
+            marginBottom: '30px',
           }}
         >
           <tbody>

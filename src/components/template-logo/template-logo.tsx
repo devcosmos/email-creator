@@ -20,11 +20,11 @@ function TemplateLogo({ accentStyle, type }: TemplateLogoProps): JSX.Element {
           cellPadding={0}
           role="presentation"
           style={{
-            marginTop: '15px',
-            marginBottom: '15px',
+            marginTop: '35px',
+            marginBottom: '35px',
             width: '80%',
             minWidth: '200px',
-            maxWidth: '280px',
+            maxWidth: '380px',
           }}
         >
           <tbody>

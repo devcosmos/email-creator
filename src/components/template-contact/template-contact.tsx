@@ -39,7 +39,7 @@ function TemplateContact({ accentStyle, type }: TemplateContactProps): JSX.Eleme
                       WebkitTextSizeAdjust: 'none',
                     }}
                   >
-                    С любовью&nbsp;❤️
+                    С уважением,
                   </span>
                 </div>
               </td>

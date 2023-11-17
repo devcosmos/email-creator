@@ -90,7 +90,13 @@ function TemplateContact({ accentStyle, type }: TemplateContactProps): JSX.Eleme
                     }}
                     href={url}
                   >
-                    🌐&nbsp;{type}
+                    <img
+                      src="https://dev.mai.ru/services/email-creator/images/globe-pointer-light.png"
+                      alt={url}
+                      width="21px"
+                      height="21px"
+                      style={{ marginBottom: '4px' }}
+                    />&nbsp;&nbsp;{type}
                   </a>
                 </div>
               </td>

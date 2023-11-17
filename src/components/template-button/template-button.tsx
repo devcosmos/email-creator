@@ -62,7 +62,7 @@ function TemplateButton({ url, title, type, accentStyle, socialUrlVK, socialUrlT
       {socialUrlVK && (
         <td style={{ margin: 0, padding: 0 }}>
           <a href={socialUrlVK} target="_blank" rel="noreferrer" style={{ marginLeft: '10px' }}>
-            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'vk' : 'vk-black'}.svg`} alt="ВКонтакте" style={{ width: '33px', height: '33px' }} />
+            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'vk' : 'vk-black'}.png`} alt="ВКонтакте" style={{ width: '33px', height: '33px' }} />
           </a>
         </td>
       )}
@@ -70,7 +70,7 @@ function TemplateButton({ url, title, type, accentStyle, socialUrlVK, socialUrlT
       {socialUrlTelegram && (
         <td style={{ margin: 0, padding: 0 }}>
           <a href={socialUrlTelegram} target="_blank" rel="noreferrer" style={{ marginLeft: '10px' }}>
-            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'telegram' : 'telegram-black'}.svg`} alt="Телеграм" style={{ width: '33px', height: '33px' }} />
+            <img src={`https://dev.mai.ru/services/email-creator/images/${accentStyle ? 'telegram' : 'telegram-black'}.png`} alt="Телеграм" style={{ width: '33px', height: '33px' }} />
           </a>
         </td>
       )}

@@ -67,7 +67,7 @@ function TemplateContact({ accentStyle, type }: TemplateContactProps): JSX.Eleme
                       WebkitTextSizeAdjust: 'none',
                     }}
                   >
-                    Ваш {title} ✈️
+                    Ваш {title}
                   </a>
                 </div>
                 <div
@@ -91,11 +91,11 @@ function TemplateContact({ accentStyle, type }: TemplateContactProps): JSX.Eleme
                     href={url}
                   >
                     <img
-                      src="https://dev.mai.ru/services/email-creator/images/globe-pointer-light.png"
+                      src={`https://dev.mai.ru/services/email-creator/images/globe-pointer-${accentStyle ? 'white' : 'grey'}.png`}
                       alt={url}
                       width="21px"
                       height="21px"
-                      style={{ marginBottom: '4px' }}
+                      style={{ marginBottom: '4px', verticalAlign: 'middle' }}
                     />&nbsp;&nbsp;{type}
                   </a>
                 </div>

@@ -1,0 +1,59 @@
+.form-switch {
+  &.mode-switch {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    .form-check-label {
+      cursor: pointer;
+      transition: color .15s ease-in-out;
+      &:first-of-type {
+        order: 1;
+        margin-right: .75rem;
+        color: $white;
+      }
+      &:last-of-type {
+        order: 3;
+        margin-left: .75rem;
+        color: $gray-400;
+      }
+    }
+    .form-check-input {
+      cursor: pointer;
+      height: 1.5rem;
+      margin-top: unset;
+      filter: none;
+      border: unset;
+      order: 2;
+      margin-left: 0;
+      background-color: $white;
+      &:disabled {
+        box-shadow: none;
+      }
+      &:checked {
+        background-color: $dark;
+        ~ .form-check-label:first-of-type {
+          color: $gray-400;
+        }
+        ~ .form-check-label:last-of-type {
+          color: $white;
+        }
+      }
+      &:focus {
+        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>"));
+        
+      }
+    }
+  }
+  &.mode-switch .form-check-input:checked {
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 26'><path d='M4 22.1679C7.5318 20.6248 9.99998 17.1006 9.99998 13C9.99998 8.89937 7.5318 5.37521 4 3.8321C5.22493 3.2969 6.5778 3 8.00002 3C13.5229 3 18 7.47715 18 13C18 18.5228 13.5229 23 8.00002 23C6.5778 23 5.22493 22.7031 4 22.1679Z' fill='#{$form-switch-checked-color}'/></svg>"));
+  }
+}
+
+[data-bs-theme=dark] {
+  .card-header {
+    --bs-card-cap-color: #FFFFFF;
+  }
+  .form-check-input {
+    --bs-border-color: #58616b;
+  }
+}

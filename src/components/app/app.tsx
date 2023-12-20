@@ -4,6 +4,7 @@ import { LetterData } from '../../types/data';
 import { SignatureType } from '../../const';
 import Template from '../template/template';
 import Settings from '../settings/settings';
+import Header from '../header/header';
 
 function App(): JSX.Element {
   const letter = useRef<null | HTMLDivElement>(null);
@@ -21,18 +22,21 @@ function App(): JSX.Element {
   });
 
   return (
-    <Container className="h-100" fluid>
-      <Row className="my-5 gy-5">
-        <Col sm="6">
-          <Settings letter={letter} letterData={letterData} setLetterData={setLetterData} />
-        </Col>
-        <Col sm="6">
-          <div ref={letter} className="rounded overflow-hidden">
-            <Template letterData={letterData} />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Header />
+      <Container className="h-100 px-5" fluid>
+        <Row className="py-5 gy-5">
+          <Col sm="6">
+            <Settings letter={letter} letterData={letterData} setLetterData={setLetterData} />
+          </Col>
+          <Col sm="6">
+            <div ref={letter} className="rounded overflow-hidden">
+              <Template letterData={letterData} />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 

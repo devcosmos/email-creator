@@ -37,7 +37,7 @@ function TemplateSocialContent({ letterData }: TemplateSocialContentProps): JSX.
                   cellPadding={0}
                   role="presentation"
                   style={{
-                    marginTop: '4%',
+                    marginTop: '5%',
                     marginLeft: '5%',
                     marginRight: '5%',
                     minWidth: '120px'

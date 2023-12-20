@@ -11,7 +11,7 @@ type TemplateButtonProps = {
 
 function TemplateButton({ url, title, type, accentStyle, socialUrlVK, socialUrlTelegram }: TemplateButtonProps): JSX.Element {
   return (
-    <tr style={{ margin: 0, padding: 0, display: 'block', marginLeft: '5%', marginBottom: '30px', }}>
+    <tr style={{ margin: 0, padding: 0, display: 'block', marginLeft: '5%', marginBottom: '5%', }}>
       <td style={{ margin: 0, padding: 0 }}>
         <table
           border={0}
@@ -47,7 +47,9 @@ function TemplateButton({ url, title, type, accentStyle, socialUrlVK, socialUrlT
                       marginBottom: '10px',
                       fontWeight: 400,
                       fontSize: '18px',
-                      lineHeight: '28px'
+                      lineHeight: '28px',
+                      paddingLeft: '20px',
+                      paddingRight: '20px',
                     }}
                   >
                     {title}

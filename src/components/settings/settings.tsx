@@ -31,13 +31,13 @@ function Settings({letter, letterData, setLetterData}: SettingsProps) {
           <SettingBaseInput
             label="Основное изображние"
             value={letterData.image}
-            name="mainImage"
+            name="image"
             handleInputChange={handleInputChange}
           />
           <SettingBaseInput
             label="Основное заголовок"
             value={letterData.title}
-            name="mainTitle"
+            name="title"
             handleInputChange={handleInputChange}
           />
           <Col xl="6">

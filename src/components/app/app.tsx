@@ -22,11 +22,11 @@ function App(): JSX.Element {
 
   return (
     <Container className="h-100" fluid>
-      <Row className="py-5 my-5">
-        <Col xs="6">
+      <Row className="my-5 gy-5">
+        <Col sm="6">
           <Settings letter={letter} letterData={letterData} setLetterData={setLetterData} />
         </Col>
-        <Col xs="6">
+        <Col sm="6">
           <div ref={letter} className="rounded overflow-hidden">
             <Template letterData={letterData} />
           </div>

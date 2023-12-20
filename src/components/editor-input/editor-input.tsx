@@ -8,7 +8,7 @@ type EditorInputProps = {
 
 function EditorInput({ body, handleReactQuillChange }: EditorInputProps): JSX.Element {
   return (
-    <FormGroup className="mb-sm-4">
+    <FormGroup>
       <Label for="reactQuill">
         Тело письма
       </Label>

@@ -7,11 +7,11 @@ type SaveButtonsProps = {
 
 function SaveButtons({ letter }: SaveButtonsProps): JSX.Element {
   return (
-    <div className="mt-5">
+    <>
       <Button
         color="primary"
         size="lg"
-        className="me-3"
+        className="me-3 mt-3"
         onClick={() => copyToClipboard(letter)}
       >
         Скопировать
@@ -20,11 +20,12 @@ function SaveButtons({ letter }: SaveButtonsProps): JSX.Element {
         color="primary"
         outline
         size="lg"
+        className="mt-3"
         onClick={() => downloadFile(letter)}
       >
         Сохранить файл
       </Button>
-    </div>
+    </>
   );
 }
 

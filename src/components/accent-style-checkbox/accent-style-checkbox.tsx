@@ -7,16 +7,18 @@ type AccentStyleCheckboxProps = {
 
 function AccentStyleCheckbox({ accentStyle, handleCheckboxChange }: AccentStyleCheckboxProps): JSX.Element {
   return (
-    <FormGroup switch className="mt-3">
-      <Input
-        type="switch"
-        checked={accentStyle}
-        name="accentStyle"
-        id="accentStyleCheckbox"
-        onChange={() => handleCheckboxChange(!accentStyle)}
-      />
-      <Label check for="accentStyleCheckbox">Альтернативная цветовая схема</Label>
-    </FormGroup>
+    <div className="d-flex align-items-center h-100">
+      <FormGroup switch className="mb-3 mb-xl-0 mt-xl-3">
+        <Input
+          type="switch"
+          checked={accentStyle}
+          name="accentStyle"
+          id="accentStyleCheckbox"
+          onChange={() => handleCheckboxChange(!accentStyle)}
+        />
+        <Label check for="accentStyleCheckbox">Альтернативная цветовая схема</Label>
+      </FormGroup>
+    </div>
   );
 }
 

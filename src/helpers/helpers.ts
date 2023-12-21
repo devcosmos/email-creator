@@ -2,7 +2,7 @@ const nodeToString = (node: HTMLDivElement): string => {
   const tmpNode = document.createElement( 'div' );
   tmpNode.appendChild( node.cloneNode( true ) );
 
-  return tmpNode.innerHTML;
+  return tmpNode.innerHTML.replaceAll('<p>', '<p style="margin-top: 0; margin-bottom: 15px;">');
 };
 
 export const copyToClipboard = (html: HTMLDivElement): void => {

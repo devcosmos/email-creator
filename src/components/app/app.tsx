@@ -24,7 +24,7 @@ function App(): JSX.Element {
   return (
     <>
       <Header />
-      <Container className="h-100 px-5" fluid>
+      <Container className="h-100 px-sm-5" fluid>
         <Row className="py-5 gy-5">
           <Col sm="6">
             <Settings letter={letter} letterData={letterData} setLetterData={setLetterData} />

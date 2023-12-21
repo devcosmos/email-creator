@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 enum ThemeMode {
   Light = 'light',
@@ -15,8 +15,8 @@ function Header() {
   }, [themeMode]);
 
   return (
-    <Navbar color="primary">
-      <Container className="d-flex align-items-center justify-content-between">
+    <Navbar color="primary" container="fluid">
+      <div className="d-flex align-items-center justify-content-between px-sm-5 w-100">
         <NavbarBrand href="/">
           <img
             alt="logo"
@@ -36,7 +36,7 @@ function Header() {
           <label className="form-check-label d-none d-sm-block" htmlFor="theme-mode">Светлая</label>
           <label className="form-check-label d-none d-sm-block" htmlFor="theme-mode">Тёмная</label>
         </div>
-      </Container>
+      </div>
     </Navbar>
   );
 }

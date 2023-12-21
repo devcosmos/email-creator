@@ -7,14 +7,17 @@ import { LetterData } from '../../types/data';
 import { ChangeEvent, MutableRefObject } from 'react';
 import SettingBaseInput from '../setting-base-input/setting-base-input';
 import SettingBaseSwitch from '../setting-base-switch/setting-base-switch';
+import { DevicesView } from '../../const';
 
 type SettingsProps = {
   letter: MutableRefObject<HTMLDivElement | null>;
   letterData: LetterData;
   setLetterData: (letterData: LetterData) => void;
+  devicesView: DevicesView;
+  setDevicesView: (devicesView: DevicesView) => void;
 }
 
-function Settings({letter, letterData, setLetterData}: SettingsProps) {
+function Settings({ letter, letterData, setLetterData, devicesView, setDevicesView }: SettingsProps) {
   const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = evt.target;
 
@@ -89,7 +92,13 @@ function Settings({letter, letterData, setLetterData}: SettingsProps) {
             handleCheckboxChange={(addSocial) => setLetterData({...letterData, 'addSocial': addSocial})}
           />
           <Col xs="12">
-            {letter.current && <SaveButtons letter={letter.current} />}
+            {letter.current && (
+              <SaveButtons
+                letter={letter.current}
+                devicesView={devicesView}
+                setDevicesView={setDevicesView}
+              />
+            )}
           </Col>
         </Row>
       </CardBody>

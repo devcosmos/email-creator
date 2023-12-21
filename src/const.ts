@@ -6,6 +6,11 @@ export enum SignatureType {
   Pum = 'preduniversariy.mai.ru',
 }
 
+export enum DevicesView {
+  Browser = 'browser',
+  Mobile = 'mobile',
+}
+
 export const SignatureScheme:
 {[key in SignatureType]: Scheme} = {
   [SignatureType.Mai]: {

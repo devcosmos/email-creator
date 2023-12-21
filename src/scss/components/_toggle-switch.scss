@@ -56,4 +56,8 @@
   .form-check-input {
     --bs-border-color: #58616b;
   }
+  .device-mobile-frame,
+  .device-browser {
+    background-color: rgba(var(--bs-body-color-rgb), 0.15);
+  }
 }

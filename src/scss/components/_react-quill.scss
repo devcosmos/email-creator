@@ -1,0 +1,27 @@
+.quill .ql-toolbar {
+  border-width: 0;
+  border-bottom: $input-border-width solid $input-border-color;
+  background-color: $card-cap-bg;
+}
+.quill .ql-container {
+  border-width: 0;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  border-color: transparent;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  border-color: var(--bs-border-color);
+}
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  color: var(--bs-body-color);
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-card-border-radius)
+}
+.ql-snow .ql-stroke {
+  stroke: var(--bs-body-color);
+}
+.ql-snow .ql-picker {
+  color: var(--bs-body-color);
+}

@@ -1,0 +1,95 @@
+// Base
+// =========================================================
+
+// Color:
+$dark:                          #232323;
+$white:                         #ffffff !default;
+$gray-100:                      #f8f9fa !default;
+$gray-200:                      #e9ecef !default;
+$gray-300:                      #dee2e6 !default;
+$gray-400:                      #ced4da !default;
+$gray-500:                      #adb5bd !default;
+$gray-600:                      #6c757d !default;
+$gray-700:                      #495057 !default;
+$gray-800:                      #343a40 !default;
+$gray-900:                      #212529 !default;
+$black:                         #000000 !default;
+
+// Font:
+$font-family-base:              'Rubik', sans-serif !default;
+$font-size-base:                1rem;
+$body-color:                    $gray-900 !default;
+
+// Labels
+$form-label-font-weight:         500;
+
+// Border 
+$border-width:                    1px !default;
+$border-radius-rounded:           50%;
+
+// Devices
+// =========================================================
+
+// Colors
+$device-browser-header-browser-bar-color:                   $body-color !default;
+
+// Backgrounds
+$device-mobile-bg-color:                                    $gray-200 !default;
+$device-tablet-bg-color:                                    $device-mobile-bg-color !default;
+$device-browser-bg-color:                                   $white !default;
+$device-browser-header-bg-color:                            $gray-100 !default;
+$device-browser-header-btn-list-btn-bg-color:               $gray-300 !default;
+$device-browser-header-browser-bar-bg-color:                $gray-200 !default;
+
+// Borders
+$device-mobile-border-radius:                               2rem !default;
+$device-tablet-border-radius:                               1rem !default;
+$device-browser-border-radius:                              .5rem !default;
+$device-browser-header-border-width:                        $border-width !default;
+$device-browser-header-border-color:                        lighten($gray-300, 3%) !default;;
+$device-browser-header-btn-list-btn-border-radius:          $border-radius-rounded !default;
+$device-browser-header-browser-bar-border-radius:           .125rem !default;
+
+// Width & Heights
+$devices-max-width:                                         1140px !default;
+$device-mobile-width:                                       24rem !default;
+$device-tablet-width:                                       50rem !default;
+$device-vertical-tablet-width:                              30rem !default;
+$device-browser-width:                                      50rem !default;
+$device-browser-lg-width:                                   60rem !default;
+$device-browser-header-btn-list-btn-width:                  .5rem !default;
+$device-browser-header-btn-list-btn-height:                 $device-browser-header-btn-list-btn-width !default;
+
+// Shadows
+$device-mobile-box-shadow:                                  0 2.75rem 5.5rem -3.5rem rgba($gray-400, .5), 0 2rem 4rem -2rem rgba($dark, .3), inset 0 -.1875rem .3125rem 0 rgba($gray-500, .5) !default;
+$device-tablet-box-shadow:                                  $device-mobile-box-shadow !default;
+$device-browser-box-shadow:                                 0 2.75rem 5.5rem -3.5rem rgba($gray-400, .5), 0 2rem 4rem -2rem rgba($dark, .1) !default;
+
+// Type
+$device-browser-header-browser-bar-font-size:               $font-size-base * .5 !default;
+
+// Positions
+$device-browser-header-btn-list-btn-start-offset:           1rem !default;
+
+// Margins
+$devices-margin-y:                                          5rem !default;
+$devices-margin-x:                                          .75rem !default;
+$devices-margin-x-offset:                                   5rem !default;
+
+// Padding
+$devices-padding-y:                                         $devices-margin-y + 2rem !default;
+$device-mobile-padding:                                     .3125rem !default;
+$device-tablet-padding:                                     $device-mobile-padding !default;
+$device-browser-header-padding-y:                           .5rem !default;
+$device-browser-header-padding-x:                           6.5rem !default;
+
+// Margins
+$devices-mobile-margin-x:                                   .5rem !default;
+
+// Gap
+$devices-rotated-gap:                                       1rem !default;
+$device-browser-header-btn-list-btn-gap:                    .25rem !default;
+
+// Transitions
+$devices-rotated-deg:                                       -22deg !default;
+$devices-rotated-translate3d:                               15%,0,0 !default;

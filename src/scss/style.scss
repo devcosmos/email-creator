@@ -1,48 +1,21 @@
-// Color: 
-// $blue:                          #5250E9;
-// $secondary:                     #00f58b;
-$dark:                          #232323;
-// $border-color-dark:               rgba(#FFFFFF, .18);
+// Variables
+@import 'variables.scss';
 
-// Font:
-$font-family-base:              'Rubik', sans-serif !default;
-
-// Labels
-$form-label-font-weight:         500;
-
+// Bootstrap core
 @import '~bootstrap/scss/bootstrap.scss';
-.sticky-top {
-  top: 4rem;
-}
 
-// React-quill
+// React Quill
 @import 'react-quill/dist/quill.snow.css';
-.quill .ql-toolbar {
-  border-width: 0;
-  border-bottom: $input-border-width solid $input-border-color;
-  background-color: $card-cap-bg;
-}
-.quill .ql-container {
-  border-width: 0;
-}
-.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
-  border-color: transparent;
-}
-.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
-  border-color: var(--bs-border-color);
-}
-.ql-snow .ql-picker.ql-expanded .ql-picker-options {
-  color: var(--bs-body-color);
-  background-color: var(--bs-card-bg);
-  background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-card-border-radius)
-}
-.ql-snow .ql-stroke {
-  stroke: var(--bs-body-color);
-}
-.ql-snow .ql-picker {
-  color: var(--bs-body-color);
-}
 
-@import 'toggle-switch.scss';
+// Layout & components
+@import 'components/react-quill.scss';
+@import 'components/toggle-switch.scss';
+
+// Devices
+@import 'devices/devices.scss';
+@import 'devices/mobile.scss';
+@import 'devices/tablets.scss';
+@import 'devices/browser.scss';
+
+// Custom core
+@import 'user.scss';

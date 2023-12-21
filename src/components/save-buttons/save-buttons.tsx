@@ -1,8 +1,8 @@
 import { Button } from 'reactstrap';
 import { copyToClipboard, downloadFile } from '../../helpers/helpers';
 import { DevicesView } from '../../const';
-import { ReactComponent as BrowserSvg } from './browser.svg';
-import { ReactComponent as MobileSvg } from './mobile.svg';
+import { BrowserSvg, MobileSvg, ClipboadrSvg, CheckSvg, SaveSvg} from './icons/index';
+import { useState } from 'react';
 
 type SaveButtonsProps = {
   letter: HTMLDivElement;
@@ -11,25 +11,35 @@ type SaveButtonsProps = {
 }
 
 function SaveButtons({ letter, devicesView, setDevicesView }: SaveButtonsProps): JSX.Element {
+  const [isCopied, setIsCopied] = useState(false);
+
   return (
     <div className="d-flex justify-content-between">
       <div>
         <Button
           color="primary"
           size="lg"
-          className="me-3 mt-3"
-          onClick={() => copyToClipboard(letter)}
+          style={{ minWidth: '190px' }}
+          className="me-3 mt-3 d-inline-flex align-items-center justify-content-center"
+          onClick={() => {
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 3000);
+            copyToClipboard(letter);
+          }}
         >
-          Скопировать
+          {isCopied ? (
+            <><CheckSvg className="me-2"/>Скопировано</>
+          ) : (
+            <><ClipboadrSvg className="me-2"/>Скопировать</>
+          )}
         </Button>
         <Button
-          color="primary"
-          outline
+          color="secondary"
           size="lg"
           className="mt-3"
           onClick={() => downloadFile(letter)}
         >
-          Сохранить файл
+          <SaveSvg />
         </Button>
       </div>
       <div className="btn-group mt-3 d-none d-xl-flex" role="group">

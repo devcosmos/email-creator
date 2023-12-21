@@ -3,9 +3,9 @@
 }
 
 .btn-check + .btn svg {
-  margin-top: 4px;
   fill: $primary;
 }
+
 .btn-check:checked + .btn svg {
   fill: #FFFFFF;
 }
